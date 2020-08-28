@@ -10,8 +10,8 @@ for $i = 0 to ubound($files) - 1
    $split = stringsplit($files[$i], '\')
    $filename = $split[$split[0]]
 
-   ;$command = 'magick ' & $files[$i] & ' -resize 62500@ -statistic median 3x50 -brightness-contrast -10x10 -canny 10x1+10%+5% -hough-lines 20x20+50 lines.mvg'
-   ;runwait(@ComSpec & " /c " & $command, "", @SW_HIDE)
+   $command = 'magick ' & $files[$i] & ' -resize 62500@ -statistic median 3x50 -brightness-contrast -10x10 -canny 10x1+10%+5% -hough-lines 20x20+50 lines.mvg'
+   runwait(@ComSpec & " /c " & $command, "", @SW_HIDE)
 
    ;parse line data
    ;	 edge      [scr, len, x1, y1, x2, y2]
